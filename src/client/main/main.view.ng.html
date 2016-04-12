@@ -1,0 +1,18 @@
+<div class="main">
+  <h1>Things</h1>
+  <form ng-submit="save()" name="form" novalidate>
+    <p>Add a thing</p>
+    <div>
+      <label>Name</label>
+      <input ng-model="newThing.name" placeholder="Name">
+    </div>
+    <input class="md-button" type="submit" value="Add">
+  </form>
+  <ul>
+    <li ng-repeat="thing in things">
+      <p>{{ thing.name }} <button ng-click="remove(thing)">&times;</button></p>
+    </li>
+  </ul>
+
+  <p>Total number of things: {{things.length}}</p>
+</div>

@@ -1,0 +1,162 @@
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/camera.css"/>
+    <link rel="stylesheet" href="css/jquery.fancybox.css"/>
+    <link rel="stylesheet" href="css/owl-carousel.css"/>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleswitcher.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+
+    <!--[if lt IE 9]>
+    <html class="lt-ie9">
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src='js/device.min.js'></script>
+</head>
+<body>
+<div class="page">
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <header>
+        <div id="stuck_container" class="stuck_container">
+            <div class="container">
+                <div class="brand">
+                    <h1 class="brand_name">
+                        <a href="./">manch</a>
+                    </h1>
+                </div>
+
+                <nav class="nav">
+                    <ul class="sf-menu" data-type="navbar">
+                        <li class="active">
+                            <a href="./">Home</a>
+                        </li>
+                        <li>
+                            <a href="index-1.html">About</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href='#'>News</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Fresh</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Archive</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="index-2.html">Our menu</a>
+                        </li>
+                        <li>
+                            <a href="index-3.html">News</a>
+                        </li>
+                        <li>
+                            <a href="index-4.html">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+    <main ui-view=""></main>
+
+    <!--========================================================
+                              FOOTER
+    =========================================================-->
+    <footer>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="grid_3">
+                        <h1>
+                            <a href="./">manch</a>
+                        </h1>
+                        <p>We are driven by uncompromising freshness and quality, gracious hospitality and a growing
+                           list
+                           of restaurants.</p>
+                        <ul class="social-list">
+                            <li>
+                                <a href='#' class="fa-facebook-f"></a>
+                            </li>
+                            <li>
+                                <a href='#' class="fa-twitter"></a>
+                            </li>
+                            <li>
+                                <a href='#' class="fa-google-plus"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid_3">
+                        <h6>LOCATION</h6>
+                        <address class="addr">4578 Marmora Road,<br>
+                                              Glasgow D04 89GR
+                        </address>
+                        <p class="connect connect__md">
+                            <a href="callto:#">800-2345-678</a>
+                            ;<br>
+                            <a href="callto:#">800-2345-679</a>
+                        </p>
+                    </div>
+                    <div class="grid_3">
+                        <h6>OPEN HOURS</h6>
+                        <ul class="list-wr">
+                            <li><span>Mondays	:</span> Closed</li>
+                            <li><span>Tue-Fri :</span> 0am - 12am</li>
+                            <li><span>Sat-Sun :</span> 7am - 1am</li>
+                            <li><span>Public Holidays :</span> 12pm - 12am</li>
+                        </ul>
+                    </div>
+                    <div class="grid_3">
+                        <h6>newsletter</h6>
+
+                        <form id="subscribe-form" class="subscribe-form">
+                            <label class="email">
+                                <input type="email" value="Your email address">
+                                <span class="error">*Invalid email.</span>
+                                <span class="success">Subscription request sent!</span>
+                            </label>
+                            <a data-type="submit" href="#" class="fa-envelope"></a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-secondary-1">
+            <div class="container">
+                <p>Manch © <span id="copyright-year"></span>.
+                    <a href="index-5.html" class="privacy">Privacy Policy</a>
+                   <!-- {%FOOTER_LINK} --></p>
+            </div>
+        </section>
+    </footer>
+</div>
+<script src="js/script.js"></script>
+</body>
