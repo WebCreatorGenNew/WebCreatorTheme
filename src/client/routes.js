@@ -7,6 +7,7 @@ angular.module('webCreatorThemeApp')
   $stateProvider
     .state('home', {
       url: '/',
+      controller:"HomeCtrl",
       templateUrl: 'client/home/view.html'
     });
   $locationProvider.html5Mode(true);
@@ -17,7 +18,7 @@ angular.module('webCreatorThemeApp')
       case 'AUTH_REQUIRED':
       case 'FORBIDDEN':
       case 'UNAUTHORIZED':
-        $state.go('main');
+        $state.go('home');
         break;
     }
   });
