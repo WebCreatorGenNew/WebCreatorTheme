@@ -9,6 +9,11 @@ angular.module('webCreatorThemeApp')
       url: '/',
       controller:"HomeCtrl",
       templateUrl: 'client/home/view.html'
+    })
+	.state('login', {
+      url: '/login',
+      controller:"LoginCtrl",
+      templateUrl: 'client/login/login.html'
     });
   $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise('/');
