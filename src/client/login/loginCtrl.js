@@ -1,5 +1,18 @@
-angular.module('webCreatorThemeApp').controller('LoginCtrl',function($scope){
-	$scope.message = 123;
+angular.module('webCreatorThemeApp').controller('LoginCtrl',function($scope, $rootScope, $state){
+
+  $scope.credentials = {
+    username: '',
+    password: ''
+  };
+
+  $scope.login = function (credentials) {
+    if(credentials.username === 'admin' && credentials.password === 'password')
+    {
+      $rootScope.isAuthenticated = true;
+      $state.go('home');
+    }
+  };
+
   (function ($) {
       var o = $('#camera');
       if (o.length > 0) {
@@ -8,7 +21,7 @@ angular.module('webCreatorThemeApp').controller('LoginCtrl',function($scope){
           $(document).ready(function () {
               o.camera({
                   autoAdvance: true,
-                  height: '38.6830%',
+                  height: '18.6830%',
                   minHeight: 'px',
                   pagination: false,
                   thumbnails: false,
