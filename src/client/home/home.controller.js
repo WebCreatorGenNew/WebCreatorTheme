@@ -1,4 +1,4 @@
-angular.module('webCreatorThemeApp').controller('HomeCtrl',function(){
+angular.module('webCreatorThemeApp').controller('HomeCtrl',function($scope){
   (function ($) {
       var o = $('#camera');
       if (o.length > 0) {

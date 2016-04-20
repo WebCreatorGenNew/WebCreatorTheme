@@ -24,3 +24,9 @@ accounts-twitter
 accounts-facebook
 accounts-google
 iron:router
+jalik:ufs
+jalik:ufs-gridfs
+cfs:standard-packages
+cfs:gridfs
+lookback:logger
+cfs:filesystem

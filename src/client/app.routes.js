@@ -8,7 +8,7 @@ angular.module('webCreatorThemeApp')
     .state('home', {
       url: '/',
       controller:"HomeCtrl",
-      templateUrl: 'client/home/view.html'
+      templateUrl: 'client/home/home.view.html'
     })
 	.state('login', {
       url: '/login',
