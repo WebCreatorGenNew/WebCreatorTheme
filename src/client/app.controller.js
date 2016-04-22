@@ -1,8 +1,8 @@
 angular.module('webCreatorThemeApp').controller('AppCtrl',function($scope){
 
-    $scope.helpers({
-     images: () => {
-       return Images.find({});
-     }
-   });
+   //  $scope.helpers({
+   //   images: () => {
+   //     return Images.find({});
+   //   }
+   // });
 });

@@ -1,0 +1,26 @@
+.upload-image-control {
+    position: relative;
+}
+.upload-image-control:hover .upload-image-container{
+    display: block;
+}
+.mask-button {
+    padding: 5px 10px;
+    background: rgba(99, 187, 216, 1);
+    font-weight: bold;
+    border: 1px solid #72ACBF;
+    float: right;
+    margin:5px;
+    border-radius: 30px;
+}
+.upload-image-container {
+    display: none;
+    position: absolute;
+    border: 2px dashed #ccc;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: rgba(189, 184, 88, 0.13);
+    bottom: 0;
+}

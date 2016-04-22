@@ -3,26 +3,50 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
         restrict: 'AE',
         scope: {
             'defaultImage': '@',
-            'key': '@'
+            'key': '@',
+            'target':'=',
+            'type':'@' //css, atribute
         },
-        template: '<div><img src="{{image}}" /><button class="mask-button">Change</button><input style="display:none;margin-top:50px" type="file" /></div>',
+        transclude: true,
+        template: '<div class="upload-image-control"><div ng-transclude></div><div class="upload-image-container"><button class="mask-button">Edit</button><input style="display:none;margin-top:50px" type="file" /></div></div>',
         link: function(scope, element, attrs) {
+            // var target = element.find(scope.target);
+            var target = scope.target;
+            function reload(img){
+                if (!img) {
+                    scope.image = scope.defaultImage;
+                    img = scope.defaultImage;
+                }
+                img = escape(img);
+                for(i in target){
+                    var t = target[i];
+                    var elem = t.element =='.' ? element : element.find(t.element);
+                    if(t.type =='css'){
+                        elem.css({
+                            'background':'url('+img+')'
+                        });
+                    } else {
+                        elem.attr(t.type,img);
+                    }
+                }
+
+            }
             scope.helpers({
                 image: (key) => {
                     var img = Images.findOne({key:scope.getReactively('key')});
-                    if(img){return img.url()};
+                    if(img){
+                        if(img.url()) reload(img.url());
+
+                        return img.url();
+                    } else {
+                        reload(scope.defaultImage);
+                    }
+
                     return null;
                 }
             });
-            function reload(){
-                if (!scope.image) {
-                    scope.image = scope.defaultImage;
-                } else {
-
-                }
-            }
-            reload();
-            var button = angular.element('button.mask-button');
+            //var container = angular.element('upload-image-container');
+            var button = angular.element(element).find('button.mask-button');
             button.click(function(){
                 angular.element(element).find('input[type="file"]').trigger('click');
             })

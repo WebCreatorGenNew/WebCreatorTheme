@@ -55,11 +55,12 @@
 
         <div class="row">
             <div class="grid_4 wow fadeInUp" data-wow-delay="0.2s">
-                <!-- <a class="thumb" href="images/page-1_img01_original.jpg"> -->
+                <div class="thumb" image-resource key="original_1" default-image="images/page-1_img01_original.jpg" target="[{element:'img',type:'src'}]">
                     <!-- <img src="images/page-1_img01.jpg" alt=""/> -->
-                    <image-resource key="original_1" default-image="images/page-1_img01_original.jpg"></image-resource>
+                    <img alt=""/>
+                    <!-- <image-resource key="original_1" default-image="images/page-1_img01_original.jpg"></image-resource> -->
                     <!-- <span class="thumb_overlay"></span> -->
-                <!-- </a> -->
+                </div>
 
                 <h6>
                     <a href='#'>ELEGANT INTERIOR</a>
@@ -97,7 +98,8 @@
         </div>
     </div>
 </section>
-<section class="parallax well-1" data-url="images/parallax1.jpg" data-mobile="true" data-speed="1">
+
+<section class="parallax well-1"  image-resource key="section_1" default-image="images/parallax2.jpg" target="[{element:'.parallax_image',type:'css'},{element:'.',type:'data-url'}]" data-mobile="true" data-speed="1">
     <div class="container wow fadeIn" data-wow-delay="0.2s">
         <h4>Breakfast</h4>
         <h5>HEALTHY MEAL AVAILABLE FROM 7AM</h5>
