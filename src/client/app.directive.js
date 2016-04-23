@@ -83,7 +83,7 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
 .directive("contenteditable", function() {
   return {
     restrict: "A",
-    require: "ngModel",
+    require: "?ngModel",
     link: function(scope, element, attrs, ngModel) {
 
       function read() {
