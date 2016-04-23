@@ -1,9 +1,20 @@
 .upload-image-control {
+    position: absolute;
+top: 0;
+right: 0;
+width: 120px;
+}
+[image-resource] {
     position: relative;
 }
-.upload-image-control:hover .upload-image-container{
-    display: block;
+[contenteditable]:hover {
+    text-shadow: 0 0 10px #CCC;
+    -moz-text-shadow: 0 0 10px #CCC;
+    -webkit-text-shadow: 0 0 10px #CCC;
 }
+/*.upload-image-control:hover .upload-image-container{
+    display: block;
+}*/
 .mask-button {
     padding: 5px 10px;
     background: rgba(99, 187, 216, 1);
@@ -14,13 +25,22 @@
     border-radius: 30px;
 }
 .upload-image-container {
-    display: none;
+    /*display: none;*/
     position: absolute;
-    border: 2px dashed #ccc;
+    /*border: 2px dashed #ccc;*/
     top: 0;
-    left: 0;
+    /*left: 0;*/
     right: 0;
     text-align: center;
-    background: rgba(189, 184, 88, 0.13);
-    bottom: 0;
+    /*background: rgba(189, 184, 88, 0.13);*/
+    /*bottom: 0;*/
+    color:white;
+}
+[contenteditable] {
+    outline: none;
+}
+.upload-image-container button {
+    box-shadow: 0 0 5px 0px #4BD2FF;
+    -webkit-box-shadow: 0 0 5px 0px #4BD2FF;
+    -moz-box-shadow: 0 0 5px 0px #4BD2FF;
 }

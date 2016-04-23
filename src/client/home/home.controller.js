@@ -16,10 +16,11 @@ angular.module('webCreatorThemeApp').controller('HomeCtrl',function($scope){
 
           $(document).ready(function () {
               o.camera({
-                  autoAdvance: true,
+                  autoAdvance: false,
                   height: '38.6830%',
                   minHeight: 'px',
                   pagination: false,
+                  overlayer: true,
                   thumbnails: false,
                   playPause: false,
                   hover: true,
