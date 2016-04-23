@@ -4,8 +4,8 @@ Meteor.methods({
     case "Menus":
         Menus.update({ _id: dataId },{ $set: { title: dataValue }});
         break;
-    case "Logo":
-        Logo.update({ _id: dataId },{ $set: { title: dataValue }});
+    case "Logos":
+        Logos.update({ _id: dataId },{ $set: { title: dataValue }});
         break;
     default:
         console.log("22");

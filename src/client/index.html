@@ -37,17 +37,17 @@
         <div id="stuck_container" class="stuck_container">
             <div class="container">
                 <div class="brand">
-                    <h1 class="brand_name">
-                        <a contenteditable ng-model="logos.title" collection="Logo" id="{{logos._id}}" field="title" dataValue="{{logos.title}}">{{logos.title}}</a>
+                    <h1 class="brand_name" ng-repeat="logo in logos">
+                        <a contenteditable ng-model="logo.title" collection="Logos" id="{{logo._id}}" field="title" dataValue="{{logo.title}}">{{logo.title}}</a>
                     </h1>
                 </div>
 
                 <nav class="nav">
                     <ul class="sf-menu" data-type="navbar">
-                        <li ng-repeat="menu in menus">
+                    
+                       <li ng-repeat="menu in menus">
                             <a contenteditable ng-model="menu.title" collection="Menus" id="{{menu._id}}" field="title" dataValue="{{menu.title}}">{{menu.title}}</a>
                         </li>
-                       
                     </ul>
                 </nav>
             </div>
