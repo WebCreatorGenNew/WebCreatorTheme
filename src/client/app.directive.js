@@ -8,9 +8,12 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
             'type':'@' //css, atribute
         },
         transclude: true,
-        template: '<div class="upload-image-control"><div ng-transclude></div><div class="upload-image-container"><button class="mask-button">Edit</button><input style="display:none;margin-top:50px" type="file" /></div></div>',
+        replace:true,
+        template: '<div ng-transclude></div>',
         link: function(scope, element, attrs) {
             // var target = element.find(scope.target);
+            element.append('<div class="upload-image-control"><div class="upload-image-container"><button class="mask-button">Change Image</button><input style="display:none;margin-top:50px" type="file" /></div></div>');
+            var control = angular.element(element).find('.upload-image-control');
             var target = scope.target;
             function reload(img){
                 if (!img) {
@@ -21,6 +24,9 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
                 for(i in target){
                     var t = target[i];
                     var elem = t.element =='.' ? element : element.find(t.element);
+                    if(!elem || elem.length == 0){
+                        elem = angular.element(t.element);
+                    }
                     if(t.type =='css'){
                         elem.css({
                             'background':'url('+img+')'
@@ -45,12 +51,13 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
                     return null;
                 }
             });
-            //var container = angular.element('upload-image-container');
-            var button = angular.element(element).find('button.mask-button');
+            var container = angular.element(element).find('.upload-image-container');
+
+            var button = angular.element(container).find('button.mask-button');
             button.click(function(){
-                angular.element(element).find('input[type="file"]').trigger('click');
+                angular.element(container).find('input[type="file"]').trigger('click');
             })
-            angular.element(element).find('input[type="file"]').bind('change', function(event) {
+            angular.element(container).find('input[type="file"]').bind('change', function(event) {
                 if(!event.target.files[0]) return;
                 scope.file = event.target.files[0];
                 var newFile = new FS.File(scope.file);

@@ -1227,7 +1227,7 @@ main {
   font: 400 60px/60px "Qwigley", sans-serif;
   color: #1f2531;
 }
-.quote-wr-2:before {
+.quote-wr-2 .left-image {
   position: absolute;
   content: '';
   background: url("../images/page-1_img11.png");
@@ -1564,12 +1564,12 @@ footer section:last-child {
   }
 }
 @media (min-width: 900px) and (max-width: 979px) {
-  .quote-wr-2:before {
+  .quote-wr-2 .left-image {
     margin-left: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 899px) {
-  .quote-wr-2:before {
+  .quote-wr-2 .left-image{
     margin-left: -63px;
   }
 }
@@ -1626,7 +1626,7 @@ footer section:last-child {
     line-height: 24px;
   }
 
-  .quote-wr-2:before {
+  .quote-wr-2 .left-image {
     margin-left: 0;
     left: -16px;
     bottom: -550px;
@@ -1666,7 +1666,7 @@ footer section:last-child {
     line-height: 24px;
   }
 
-  .quote-wr-2:before {
+  .quote-wr-2 .left-image {
     display: none;
   }
 
