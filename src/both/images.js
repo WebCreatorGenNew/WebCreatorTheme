@@ -27,14 +27,14 @@ Images.deny({
 });
 
 Images.allow({
-    insert: function() {
-        return true;
+    insert: function(userId) {
+        return ( userId ? true : false);
     },
-    update: function() {
-        return true;
+    update: function(userId) {
+        return ( userId ? true : false);
     },
-    remove: function() {
-        return true;
+    remove: function(userId) {
+        return ( userId ? true : false);
     },
     download: function() {
         return true;

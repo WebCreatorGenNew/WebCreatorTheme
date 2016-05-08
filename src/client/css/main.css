@@ -7,7 +7,7 @@ width: 120px;
 [image-resource] {
     position: relative;
 }
-[contenteditable]:hover {
+[contenteditable!="false"]:hover {
     text-shadow: 0 0 10px #CCC;
     -moz-text-shadow: 0 0 10px #CCC;
     -webkit-text-shadow: 0 0 10px #CCC;
@@ -43,4 +43,12 @@ width: 120px;
     box-shadow: 0 0 5px 0px #4BD2FF;
     -webkit-box-shadow: 0 0 5px 0px #4BD2FF;
     -moz-box-shadow: 0 0 5px 0px #4BD2FF;
+}
+.btn-logout {
+    padding: 20px;
+    background: #ccc;
+    border: 1px solid #ccc;
+    position: fixed;
+    top:10px;
+    right:10px
 }

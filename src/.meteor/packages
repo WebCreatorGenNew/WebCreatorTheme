@@ -18,8 +18,6 @@ autopublish             # Publish all data to the clients (for prototyping)
 angular
 angularui:angular-ui-router
 mquandalle:bower
-accounts-password
-dotansimha:accounts-ui-angular
 accounts-twitter
 accounts-facebook
 accounts-google
@@ -29,3 +27,4 @@ cfs:standard-packages
 cfs:gridfs
 lookback:logger
 cfs:filesystem
+accounts-ui

@@ -1,1 +1,0 @@
-Logos = new Meteor.Collection("logo");

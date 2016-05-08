@@ -29,7 +29,8 @@
     <script src='js/device.min.js'></script>
 </head>
 <body ng-controller="AppCtrl">
-<div class="page">
+<div class="page" ng-cloak>
+    <button class="btn-logout" ng-if="currentUser" ng-click="logout()">LOG OUT</button>
     <!--========================================================
                               HEADER
     =========================================================-->
@@ -45,9 +46,9 @@
 
                 <nav class="nav">
                     <ul class="sf-menu" data-type="navbar">
-                    
+
                        <li ng-repeat="menu in menus">
-                            <a contenteditable ng-model="menu.title" collection="Menus" id="{{menu._id}}" field="title" dataValue="{{menu.title}}">{{menu.title}}</a>
+                            <a contenteditable key="{{menu.id}}" default-text="{{menu.name}}">{{menu.name}}</a>
                         </li>
                     </ul>
                 </nav>

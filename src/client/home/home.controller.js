@@ -1,14 +1,4 @@
 angular.module('webCreatorThemeApp').controller('HomeCtrl',function($scope){
-  $scope.isAuthenticated = null;
-  if (Meteor.userId() === null) {
-    $scope.isAuthenticated = false;
-    //console.log($scope.isAuthenticated);
-  }
-  else
-  {
-    $scope.isAuthenticated = true;
-    //console.log($scope.isAuthenticated);
-  }
   (function ($) {
       var o = $('#camera');
       if (o.length > 0) {

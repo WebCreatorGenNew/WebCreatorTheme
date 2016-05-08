@@ -52,7 +52,10 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
                 }
             });
             var container = angular.element(element).find('.upload-image-container');
-
+            if(!Meteor.user()){
+                container.hide();
+                return;
+            }
             var button = angular.element(container).find('button.mask-button');
             button.click(function(){
                 angular.element(container).find('input[type="file"]').trigger('click');
@@ -65,6 +68,10 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
                 Meteor.call('deleteOld', scope.key, function(err, data) {
                     console.log(err);
                     if (err) return;
+                    // Meteor.call('upload', event.target.files[0],function(err,data) {
+                    //     console.log(err);
+                    //     if (err) return;
+                    // });
                     Images.insert(newFile, function(err, fileObj) {
                         if (err) {
                             console.log(err)
@@ -83,35 +90,78 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
 .directive("contenteditable", function() {
   return {
     restrict: "A",
-    require: "?ngModel",
-    link: function(scope, element, attrs, ngModel) {
+    scope: {
+            key:'@',
+            defaultText:'@'
 
-      function read() {
-        ngModel.$setViewValue(element.html());
-      }
+    },
+    // require: "ngModel",
+    link: function(scope, element, attrs) {
+        if(!Meteor.user()){
+            element.attr('contenteditable','false');
+        }
+        function reload(text){
+            element.html(text);
+        }
+        scope.helpers({
+            text: (key) => {
+                var text = Texts.findOne({key:scope.getReactively('key')});
+                if(text){
+                    if(text) reload(text.value);
 
-      ngModel.$render = function() {
-        element.html(ngModel.$viewValue || "");
-      };
-        element.bind('blur keyup change', function() {
-            
-            var dataCollection = attrs.collection;
-            var dataId = attrs.id;
-            var dataField = attrs.field;
-            var dataValue = attrs.valuedata;
-            var html = element.text();
-            Meteor.call('updateContent', dataCollection, dataId, dataField, html, function(error) {
-              if (!error){
-                console.log("success");
-              
-              }
-            });
-          //console.log(attrs.collection + '--' + attrs.field + '--' + attrs.value);
+                    return text;
+                } else {
+                    reload(scope.defaultText);
+                }
+
+                return null;
+            }
         });
-      element.bind("blur keyup change", function() {
-        scope.$apply(read);
-      });
+        element.on('blur',function(){
+            if(element.html() != scope.text) {
+                if(scope.text){
+                    Texts.update({_id:scope.text._id},{$set:{value:element.html()}});
+                } else {
+                    Texts.insert({key:scope.getReactively('key'),value:element.html()});
+                }
+
+            }
+        })
     }
   };
-})
-;
+});
+// .directive("contenteditable", function() {
+//   return {
+//     restrict: "A",
+//     require: "?ngModel",
+//     link: function(scope, element, attrs, ngModel) {
+//
+//       function read() {
+//         ngModel.$setViewValue(element.html());
+//       }
+//
+//       ngModel.$render = function() {
+//         element.html(ngModel.$viewValue || "");
+//       };
+//         element.bind('blur keyup change', function() {
+//
+//             var dataCollection = attrs.collection;
+//             var dataId = attrs.id;
+//             var dataField = attrs.field;
+//             var dataValue = attrs.valuedata;
+//             var html = element.text();
+//             Meteor.call('updateContent', dataCollection, dataId, dataField, html, function(error) {
+//               if (!error){
+//                 console.log("success");
+//
+//               }
+//             });
+//           //console.log(attrs.collection + '--' + attrs.field + '--' + attrs.value);
+//         });
+//       element.bind("blur keyup change", function() {
+//         scope.$apply(read);
+//       });
+//     }
+//   };
+// })
+// ;
