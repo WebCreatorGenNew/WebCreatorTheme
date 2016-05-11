@@ -1,8 +1,8 @@
 .upload-image-control {
     position: absolute;
-top: 0;
-right: 0;
-width: 120px;
+    top: 0;
+    right: 0;
+    width: 120px;
 }
 [image-resource] {
     position: relative;
@@ -12,16 +12,18 @@ width: 120px;
     -moz-text-shadow: 0 0 10px #CCC;
     -webkit-text-shadow: 0 0 10px #CCC;
 }
+
 /*.upload-image-control:hover .upload-image-container{
     display: block;
 }*/
+
 .mask-button {
     padding: 5px 10px;
     background: rgba(99, 187, 216, 1);
     font-weight: bold;
     border: 1px solid #72ACBF;
     float: right;
-    margin:5px;
+    margin: 5px;
     border-radius: 30px;
 }
 .upload-image-container {
@@ -34,7 +36,7 @@ width: 120px;
     text-align: center;
     /*background: rgba(189, 184, 88, 0.13);*/
     /*bottom: 0;*/
-    color:white;
+    color: white;
 }
 [contenteditable] {
     outline: none;
@@ -45,10 +47,32 @@ width: 120px;
     -moz-box-shadow: 0 0 5px 0px #4BD2FF;
 }
 .btn-logout {
-    padding: 20px;
+    padding: 10px;
     background: #ccc;
     border: 1px solid #ccc;
-    position: fixed;
-    top:10px;
-    right:10px
+    width: 100%;
+    z-index: 99999;
+}
+.input-login {
+    padding: 5px;
+    font-size: 20px;
+}
+.btn-login {
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-left: 0px;
+    height: 37px;
+    /*width: 65px;*/
+    float: right;
+    font-size: 15px;
+}
+.login-form .label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.login-form {
+    padding: 20px;
+    margin: 0 auto;
+    width: 300px;
+    text-align: center;
 }

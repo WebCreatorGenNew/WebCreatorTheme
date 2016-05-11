@@ -91,9 +91,8 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
   return {
     restrict: "A",
     scope: {
-            key:'@',
-            defaultText:'@'
-
+            key:'=',
+            defaultText:'='
     },
     // require: "ngModel",
     link: function(scope, element, attrs) {
@@ -105,7 +104,7 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
         }
         scope.helpers({
             text: (key) => {
-                var text = Texts.findOne({key:scope.getReactively('key')});
+                var text = Texts.findOne({key:scope.key});
                 if(text){
                     if(text) reload(text.value);
 
@@ -122,7 +121,7 @@ angular.module('webCreatorThemeApp').directive('imageResource', function($rootSc
                 if(scope.text){
                     Texts.update({_id:scope.text._id},{$set:{value:element.html()}});
                 } else {
-                    Texts.insert({key:scope.getReactively('key'),value:element.html()});
+                    Texts.insert({key:scope.key,value:element.html()});
                 }
 
             }
